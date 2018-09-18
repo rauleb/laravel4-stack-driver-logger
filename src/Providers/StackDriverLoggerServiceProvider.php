@@ -31,12 +31,10 @@ class StackDriverLoggerServiceProvider extends ServiceProvider
                 $context = $args[2];
             }
 
-            if ($message instanceof \ErrorException) {
-                return $this->getLogger()->log($level, $message, $context);
-            }
-            if ($app['google.logger'] instanceof PsrLogger) {
-                $app['google.logger']->log($level, $message, $context);
-            }
+
+            return $this->getLogger()->log($level, $message, $context);
+
+
         });
     }
 
@@ -65,11 +63,11 @@ class StackDriverLoggerServiceProvider extends ServiceProvider
 
     protected function getCredentials()
     {
-        return \Illuminate\Config\Repository::get('services.stack_driver_logger.credentials');
+        return \Config::get('services.stack_driver_logger.credentials');
     }
 
     protected function getLogName()
     {
-        return \Illuminate\Config\Repository::get('services.stack_driver_logger.log_name') ? : 'example-log';
+        return \Config::get('services.stack_driver_logger.log_name') ? : 'example-log';
     }
 }
