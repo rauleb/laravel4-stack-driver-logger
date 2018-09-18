@@ -1,6 +1,6 @@
 <?php
 
-namespace Pagevamp\Providers;
+namespace Rauleb\Providers;
 
 use Google\Cloud\Logging\PsrLogger;
 use Illuminate\Support\ServiceProvider;
@@ -59,16 +59,16 @@ class StackDriverLoggerServiceProvider extends ServiceProvider
 
         return $logging->psrLogger($this->getLogName(), [
             'batchEnabled' => $batchEnabled,
-        ]);
+        ]);x
     }
 
     protected function getCredentials()
     {
-        return config('services.stack_driver_logger.credentials');
+        return \Illuminate\Config\Repository::get('services.stack_driver_logger.credentials');
     }
 
     protected function getLogName()
     {
-        return config('services.stack_driver_logger.log_name') ? : 'example-log';
+        return \Illuminate\Config\Repository::get('services.stack_driver_logger.log_name') ? : 'example-log';
     }
 }

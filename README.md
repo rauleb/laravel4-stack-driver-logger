@@ -6,17 +6,17 @@ This library adds a listener to Laravel's logging component. Laravel's session i
 
 Installation
 ------------
-
+<!-- 
 Install using composer:
 
 ```
 composer require pagevamp/laravel-stack-driver-logger
-```
+``` -->
 
 Add the service provider to the `'providers'` array in `config/app.php`:
 
 ```php
-Pagevamp\Providers\StackDriverLoggerServiceProvider::class,
+Rauleb\Providers\StackDriverLoggerServiceProvider::class,
 ```
     
 If you only want to enable Stack Driver reporting for certain environments you can conditionally load the service provider in your `AppServiceProvider`:

@@ -1,14 +1,14 @@
 {
-  "name": "pagevamp/laravel-stack-driver-logger",
+  "name": "Rauleb/laravel4-stack-driver-logger",
   "autoload": {
     "psr-4": {
-      "Pagevamp\\": "src/"
+      "Rauleb\\": "src/"
     }
   },
   "authors": [
     {
-      "name": "Sajjan",
-      "email": "s4jj4n@gmail.com"
+      "name": "Rauleb",
+      "email": "rauleburro@gmail.com"
     }
   ],
   "require": {
