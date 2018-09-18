@@ -6,6 +6,7 @@ use Google\Cloud\Logging\PsrLogger;
 use Illuminate\Support\ServiceProvider;
 use Google\Cloud\Logging\LoggingClient;
 
+
 class StackDriverLoggerServiceProvider extends ServiceProvider
 {
     /**
@@ -59,7 +60,7 @@ class StackDriverLoggerServiceProvider extends ServiceProvider
 
         return $logging->psrLogger($this->getLogName(), [
             'batchEnabled' => $batchEnabled,
-        ]);x
+        ]);
     }
 
     protected function getCredentials()
