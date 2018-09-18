@@ -16,18 +16,7 @@ composer require pagevamp/laravel-stack-driver-logger
 Add the service provider to the `'providers'` array in `config/app.php`:
 
 ```php
-Rauleb\Providers\StackDriverLoggerServiceProvider::class,
-```
-    
-If you only want to enable Stack Driver reporting for certain environments you can conditionally load the service provider in your `AppServiceProvider`:
-
-```php
-    public function register()
-    {
-        if ($this->app->environment('production')) {
-            $this->app->register(\Pagevamp\Providers\StackDriverLoggerServiceProvider::class);
-        }
-    }
+'Rauleb\Providers\StackDriverLoggerServiceProvider',
 ```
 Configuration
 -------------
